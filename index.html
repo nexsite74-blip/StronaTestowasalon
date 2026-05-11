@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velura Beauty Studio – STRONA TESTOWA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #c9847a;
+    --rose-light: #f5e6e4;
+    --rose-dark: #9e5f57;
+    --cream: #fdf8f5;
+    --warm: #f2ebe5;
+    --text: #2d2320;
+    --muted: #8a7470;
+    --gold: #c9a96e;
+    --radius: 2rem;
+    --radius-sm: 1rem;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* TEST BANNER */
+  .test-banner {
+    background: var(--text);
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  .test-banner span { color: var(--gold); font-weight: 700; }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 5%;
+    background: var(--cream);
+    border-bottom: 1px solid var(--warm);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    line-height: 1;
+  }
+  .logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-top: 2px;
+  }
+  .logo-test-badge {
+    font-size: 0.55rem;
+    background: var(--rose-light);
+    color: var(--rose-dark);
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+
+  .nav-cta {
+    background: var(--rose);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.6rem;
+    border-radius: 3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--rose-dark); }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 88vh;
+    gap: 0;
+  }
+
+  .hero-left {
+    padding: 6rem 5% 4rem 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--rose-light);
+    color: var(--rose-dark);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 3rem;
+    margin-bottom: 1.8rem;
+    width: fit-content;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--text);
+    color: var(--cream);
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--rose-dark); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid #d9ccc9;
+    padding: 0.9rem 2rem;
+    border-radius: 3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--rose); color: var(--rose); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--warm);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--rose);
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--warm);
+    border-radius: 0 0 0 var(--radius);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 0 0 var(--radius);
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    background: rgba(253,248,245,0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 1.4rem;
+    padding: 1.2rem 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 8px 32px rgba(45,35,32,0.12);
+  }
+  .badge-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--rose-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .badge-text p { font-size: 0.78rem; color: var(--muted); }
+  .badge-text strong { font-size: 0.92rem; color: var(--text); }
+
+  /* ZMYSLONE DATA WARNING */
+  .data-notice {
+    background: #fffbea;
+    border: 1px solid #f0d060;
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.6rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6b5e00;
+    margin: 2.5rem 5%;
+    border-radius: var(--radius-sm);
+  }
+
+  /* SERVICES */
+  .section { padding: 5rem 5%; }
+  .section-head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(45,35,32,0.1);
+  }
+
+  .service-img-wrap {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: var(--warm);
+  }
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .service-card:hover .service-img { transform: scale(1.04); }
+
+  .service-price-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--text);
+    color: var(--cream);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .service-body { padding: 1.5rem; }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+  }
+  .service-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
+  }
+  .service-duration {
+    font-size: 0.72rem;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* TEAM */
+  .team-section { background: var(--warm); padding: 5rem 5%; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .team-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-align: center;
+  }
+  .team-img-wrap {
+    height: 260px;
+    overflow: hidden;
+    background: var(--rose-light);
+  }
+  .team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .team-body { padding: 1.4rem; }
+  .team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .team-role {
+    font-size: 0.72rem;
+    color: var(--rose);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .team-exp {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+  .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .author-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--rose-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--rose-dark);
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 0.85rem; font-weight: 500; }
+  .author-date { font-size: 0.72rem; color: var(--muted); }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--text);
+    padding: 5rem 5%;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-top: 5rem;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .contact-title em { font-style: italic; color: var(--rose); }
+  .contact-info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+  }
+  .info-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(201,132,122,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .info-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .info-value { font-size: 0.9rem; color: var(--cream); margin-top: 2px; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-input {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 1rem;
+    padding: 0.9rem 1.2rem;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-input:focus { border-color: var(--rose); }
+  textarea.form-input { resize: none; height: 120px; }
+
+  .form-notice {
+    font-size: 0.7rem;
+    color: var(--rose);
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0;
+  }
+
+  .btn-submit {
+    background: var(--rose);
+    color: #fff;
+    border: none;
+    border-radius: 3rem;
+    padding: 1rem 2.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: fit-content;
+    transition: background 0.2s;
+  }
+  .btn-submit:hover { background: var(--rose-dark); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text);
+    padding: 2rem 5%;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer p { font-size: 0.75rem; color: var(--muted); }
+  footer .footer-test { font-size: 0.72rem; color: var(--rose); }
+
+  /* AI IMAGES (placeholder gradient images) */
+  .ai-placeholder {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 360px; border-radius: 0 0 var(--radius) var(--radius); }
+    .hero-left { padding: 3rem 5%; }
+    .services-grid, .team-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BANER TESTOWY -->
+<div class="test-banner">
+  🚧 <span>STRONA TESTOWA / DEMO</span> — Stworzona w celach edukacyjnych. Wszystkie dane, zdjęcia i informacje są <span>ZMYŚLONE</span>. Nie należy traktować ich jako rzeczywistych.
+</div>
+
+<!-- NAWIGACJA -->
+<nav>
+  <div class="logo">
+    <div class="logo-name">VELURA</div>
+    <div class="logo-sub">Beauty Studio</div>
+    <div class="logo-test-badge">📚 Logo testowe – strona edukacyjna</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Oferta</a></li>
+    <li><a href="#">Zespół</a></li>
+    <li><a href="#">Opinie</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+  <button class="nav-cta">Zarezerwuj wizytę</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">✦ Salon kosmetyczny w Warszawie</span>
+    <h1 class="hero-title">
+      Poczuj się<br>
+      <em>piękna</em><br>
+      w każdej chwili
+    </h1>
+    <p class="hero-desc">
+      Velura Beauty Studio to miejsce, gdzie nowoczesne techniki kosmetyczne łączą się z wyjątkową atmosferą relaksu. Twój komfort jest dla nas najważniejszy.
+    </p>
+    <div class="hero-btns">
+      <button class="btn-primary">Zarezerwuj termin</button>
+      <button class="btn-ghost">Zobacz ofertę</button>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">850+</div>
+        <div class="stat-label">Zadowolonych klientek</div>
+      </div>
+      <div>
+        <div class="stat-num">8</div>
+        <div class="stat-label">Lat doświadczenia</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9★</div>
+        <div class="stat-label">Średnia ocen</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Zdjęcie AI – placeholder SVG -->
+    <svg class="ai-placeholder" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#f5e6e4"/>
+          <stop offset="60%" stop-color="#e8d5d0"/>
+          <stop offset="100%" stop-color="#c9b0a9"/>
+        </radialGradient>
+        <radialGradient id="g2" cx="40%" cy="60%" r="50%">
+          <stop offset="0%" stop-color="#e8b8b0" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+      </defs>
+      <rect width="800" height="900" fill="url(#g1)"/>
+      <rect width="800" height="900" fill="url(#g2)"/>
+      <!-- Dekoracyjne kształty sugerujące postać -->
+      <ellipse cx="400" cy="260" rx="140" ry="160" fill="#d4a09a" opacity="0.45"/>
+      <ellipse cx="400" cy="220" rx="90" ry="100" fill="#c9847a" opacity="0.35"/>
+      <rect x="240" y="420" width="320" height="480" rx="60" fill="#c9847a" opacity="0.25"/>
+      <!-- Tekst z etykietą AI -->
+      <rect x="180" y="380" width="440" height="50" rx="25" fill="rgba(255,255,255,0.7)"/>
+      <text x="400" y="412" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9e5f57" font-weight="500">📸 Ilustracja zastępcza – zdjęcie AI (zmyślone)</text>
+      <!-- Kwiaty dekoracyjne -->
+      <circle cx="120" cy="180" r="40" fill="#e8b8b0" opacity="0.4"/>
+      <circle cx="100" cy="150" r="25" fill="#c9847a" opacity="0.3"/>
+      <circle cx="680" cy="700" r="55" fill="#e8b8b0" opacity="0.35"/>
+      <circle cx="710" cy="730" r="30" fill="#c9847a" opacity="0.25"/>
+      <!-- Płatki -->
+      <ellipse cx="650" cy="120" rx="30" ry="50" fill="#f0d4d0" opacity="0.5" transform="rotate(-30 650 120)"/>
+      <ellipse cx="680" cy="100" rx="25" ry="45" fill="#e8b8b0" opacity="0.4" transform="rotate(20 680 100)"/>
+    </svg>
+
+    <div class="hero-badge">
+      <div class="badge-icon">🌸</div>
+      <div class="badge-text">
+        <p>Nasz bestseller</p>
+        <strong>Peeling różany premium</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POWIADOMIENIE O ZMYŚLONYCH DANYCH -->
+<div class="data-notice">
+  ⚠️ <strong>Uwaga edukacyjna:</strong> Wszelkie dane na tej stronie — nazwy, ceny, opinie, zdjęcia, numery telefonów, adresy — są <strong>całkowicie zmyślone</strong> i stworzone wyłącznie w celach nauki tworzenia stron internetowych. Nazwa „Velura Beauty Studio" jest wymyślona na potrzeby tego projektu.
+</div>
+
+<!-- USŁUGI -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-tag">✦ Nasza oferta</div>
+    <h2 class="section-title">Zabiegi stworzone<br>z <em>myślą o Tobie</em></h2>
+  </div>
+
+  <div class="services-grid">
+    <!-- Usługa 1 -->
+    <div class="service-card">
+      <div class="service-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="220" fill="#f5e6e4"/>
+          <ellipse cx="200" cy="110" rx="80" ry="70" fill="#c9847a" opacity="0.4"/>
+          <ellipse cx="200" cy="95" rx="50" ry="45" fill="#e8b8b0" opacity="0.5"/>
+          <circle cx="200" cy="90" rx="28" ry="28" fill="#d4a09a" opacity="0.6"/>
+          <rect x="60" y="170" width="280" height="30" rx="15" fill="rgba(255,255,255,0.7)"/>
+          <text x="200" y="190" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#9e5f57">🖼 Ilustracja AI (zmyślona)</text>
+        </svg>
+        <div class="service-price-badge">od 180 zł*</div>
+      </div>
+      <div class="service-body">
+        <div class="service-name">Peeling różany premium</div>
+        <div class="service-desc">Regenerujący zabieg z ekstraktem z płatków róży damasceńskiej. Wygładza, rozświetla i głęboko nawilża skórę.</div>
+        <div class="service-duration">⏱ 60 minut &nbsp;·&nbsp; *cena zmyślona</div>
+      </div>
+    </div>
+
+    <!-- Usługa 2 -->
+    <div class="service-card">
+      <div class="service-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="220" fill="#e8f4f0"/>
+          <rect x="100" y="50" width="200" height="130" rx="30" fill="#7ab8a8" opacity="0.3"/>
+          <rect x="130" y="70" width="140" height="90" rx="20" fill="#5da090" opacity="0.35"/>
+          <circle cx="200" cy="115" r="35" fill="#4a9080" opacity="0.3"/>
+          <rect x="60" y="170" width="280" height="30" rx="15" fill="rgba(255,255,255,0.7)"/>
+          <text x="200" y="190" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#2d6b5e">🖼 Ilustracja AI (zmyślona)</text>
+        </svg>
+        <div class="service-price-badge">od 250 zł*</div>
+      </div>
+      <div class="service-body">
+        <div class="service-name">Lifting twarzowy HIFU</div>
+        <div class="service-desc">Nieinwazyjny zabieg ujędrniający z użyciem ultradźwięków skoncentrowanych. Efekt widoczny natychmiast.</div>
+        <div class="service-duration">⏱ 90 minut &nbsp;·&nbsp; *cena zmyślona</div>
+      </div>
+    </div>
+
+    <!-- Usługa 3 -->
+    <div class="service-card">
+      <div class="service-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="220" fill="#fdf0e4"/>
+          <ellipse cx="200" cy="120" rx="100" ry="70" fill="#e8a86a" opacity="0.3"/>
+          <ellipse cx="180" cy="100" rx="60" ry="50" fill="#c9845a" opacity="0.25"/>
+          <ellipse cx="220" cy="130" rx="55" ry="45" fill="#e8a86a" opacity="0.3"/>
+          <rect x="60" y="170" width="280" height="30" rx="15" fill="rgba(255,255,255,0.7)"/>
+          <text x="200" y="190" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8b5a20">🖼 Ilustracja AI (zmyślona)</text>
+        </svg>
+        <div class="service-price-badge">od 140 zł*</div>
+      </div>
+      <div class="service-body">
+        <div class="service-name">Masaż relaksacyjny twarzy</div>
+        <div class="service-desc">Klasyczny masaż twarzy, szyi i dekoltu. Redukuje napięcie mięśniowe i poprawia krążenie.</div>
+        <div class="service-duration">⏱ 45 minut &nbsp;·&nbsp; *cena zmyślona</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZESPÓŁ -->
+<section class="team-section">
+  <div class="section-head">
+    <div class="section-tag">✦ Poznaj nasz zespół</div>
+    <h2 class="section-title">Ekspertki <em>piękna</em></h2>
+    <p style="font-size:0.78rem; color:#8a7470; margin-top:0.5rem;">⚠️ Wszystkie osoby i dane są zmyślone – stworzone na potrzeby strony testowej</p>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="260" height="260" fill="#f5e6e4"/>
+          <ellipse cx="130" cy="100" rx="55" ry="60" fill="#c9847a" opacity="0.45"/>
+          <ellipse cx="130" cy="88" rx="35" ry="38" fill="#e8b8b0" opacity="0.5"/>
+          <rect x="50" y="160" width="160" height="100" rx="30" fill="#c9847a" opacity="0.3"/>
+          <text x="130" y="245" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#9e5f57">👤 Postać zmyślona</text>
+        </svg>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Anna Kowalska*</div>
+        <div class="team-role">Specjalistka zabiegów</div>
+        <div class="team-exp">8 lat doświadczenia*</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="260" height="260" fill="#e8f4f0"/>
+          <ellipse cx="130" cy="100" rx="55" ry="60" fill="#7ab8a8" opacity="0.45"/>
+          <ellipse cx="130" cy="88" rx="35" ry="38" fill="#a8d4ca" opacity="0.5"/>
+          <rect x="50" y="160" width="160" height="100" rx="30" fill="#7ab8a8" opacity="0.3"/>
+          <text x="130" y="245" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#2d6b5e">👤 Postać zmyślona</text>
+        </svg>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Marta Nowak*</div>
+        <div class="team-role">Kosmetolog estetyczny</div>
+        <div class="team-exp">5 lat doświadczenia*</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="260" height="260" fill="#fdf0e4"/>
+          <ellipse cx="130" cy="100" rx="55" ry="60" fill="#e8a86a" opacity="0.45"/>
+          <ellipse cx="130" cy="88" rx="35" ry="38" fill="#f5c8a0" opacity="0.5"/>
+          <rect x="50" y="160" width="160" height="100" rx="30" fill="#e8a86a" opacity="0.3"/>
+          <text x="130" y="245" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b5a20">👤 Postać zmyślona</text>
+        </svg>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Zofia Wiśniewska*</div>
+        <div class="team-role">Terapeuta ciała</div>
+        <div class="team-exp">6 lat doświadczenia*</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-img-wrap">
+        <svg class="ai-placeholder" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="260" height="260" fill="#f0eaf8"/>
+          <ellipse cx="130" cy="100" rx="55" ry="60" fill="#a090d0" opacity="0.45"/>
+          <ellipse cx="130" cy="88" rx="35" ry="38" fill="#c8b8e8" opacity="0.5"/>
+          <rect x="50" y="160" width="160" height="100" rx="30" fill="#a090d0" opacity="0.3"/>
+          <text x="130" y="245" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#4a3580">👤 Postać zmyślona</text>
+        </svg>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Karolina Maj*</div>
+        <div class="team-role">Stylista paznokci</div>
+        <div class="team-exp">4 lata doświadczenia*</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIE -->
+<section class="section">
+  <div class="section-head">
+    <div class="section-tag">✦ Co mówią klientki</div>
+    <h2 class="section-title">Prawdziwe <em>opinie</em></h2>
+    <p style="font-size:0.78rem; color:#8a7470; margin-top:0.5rem;">⚠️ Wszystkie opinie są zmyślone – stworzone na potrzeby strony testowej</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Absolutnie najlepszy peeling, jaki miałam w życiu. Skóra promienieje przez tygodnie! Polecam każdej kobiecie."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div>
+          <div class="author-name">Aleksandra K.* <span style="font-size:0.68rem;color:#c9847a">(zmyślona)</span></div>
+          <div class="author-date">Styczeń 2025*</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Profesjonalna obsługa, niesamowita atmosfera. Czuję się tu jak w luksusowym spa. Będę wracać!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">MJ</div>
+        <div>
+          <div class="author-name">Magdalena J.* <span style="font-size:0.68rem;color:#c9847a">(zmyślona)</span></div>
+          <div class="author-date">Marzec 2025*</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Lifting HIFU zrobił cuda. Efekty lepsze niż się spodziewałam, a personel cudowny i cierpliwy."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">EW</div>
+        <div>
+          <div class="author-name">Ewa W.* <span style="font-size:0.68rem;color:#c9847a">(zmyślona)</span></div>
+          <div class="author-date">Kwiecień 2025*</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact-section">
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-title">Zarezerwuj swój<br><em>wyjątkowy zabieg</em></h2>
+      <p style="color:#8a7470; font-size:0.85rem; margin-bottom:2rem; line-height:1.7;">Skontaktuj się z nami i umów się na wizytę. Chętnie doradzimy, który zabieg będzie dla Ciebie najlepszy.</p>
+
+      <div class="contact-info-item">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Adres (zmyślony)</div>
+          <div class="info-value">ul. Różana 14/3, 00-001 Warszawa*</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Telefon (zmyślony)</div>
+          <div class="info-value">+48 000 000 000*</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="info-icon">📧</div>
+        <div>
+          <div class="info-label">E-mail (zmyślony)</div>
+          <div class="info-value">kontakt@velura-test.pl*</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Godziny (zmyślone)</div>
+          <div class="info-value">Pon–Pt: 9:00–20:00 | Sob: 9:00–17:00*</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <div class="form-notice">⚠️ Formularz testowy – nie wysyła danych, służy tylko do demonstracji</div>
+        <div class="form-row">
+          <input type="text" class="form-input" placeholder="Imię i nazwisko*">
+          <input type="tel" class="form-input" placeholder="Numer telefonu*">
+        </div>
+        <input type="email" class="form-input" placeholder="Adres e-mail*">
+        <input type="text" class="form-input" placeholder="Wybierz usługę*">
+        <textarea class="form-input" placeholder="Dodatkowe informacje (opcjonalnie)..."></textarea>
+        <button class="btn-submit">Wyślij zapytanie (demo)</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STOPKA -->
+<footer>
+  <div>
+    <p style="color:#fdf8f5; font-size:0.85rem; font-family:'Cormorant Garamond',serif; font-weight:300; letter-spacing:0.1em;">VELURA BEAUTY STUDIO</p>
+    <p>© 2025 — Strona testowa stworzona w celach edukacyjnych</p>
+  </div>
+  <div class="footer-test">
+    📚 Strona edukacyjna · Wszystkie dane zmyślone · Nazwa wymyślona na potrzeby nauki
+  </div>
+  <p>Stworzone z użyciem HTML, CSS & miłości do designu 🌸</p>
+</footer>
+
+</body>
+</html>
